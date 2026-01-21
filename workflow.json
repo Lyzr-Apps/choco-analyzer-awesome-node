@@ -1,0 +1,178 @@
+{
+  "workflow_id": "chocolate_snacking_som_sov_analyzer",
+  "workflow_name": "Chocolate Snacking SOM/SOV Analyzer",
+  "description": "Complete SOM/SOV analysis workflow with data validation, market metrics calculation, competitive intelligence research, and strategic recommendations",
+  "created_at": "2026-01-21T00:00:00Z",
+  "nodes": [
+    {
+      "id": "input_node",
+      "type": "Input",
+      "label": "Upload Data",
+      "nodeCategory": "input",
+      "position": { "x": 100, "y": 50 }
+    },
+    {
+      "id": "analysis_coordinator",
+      "type": "Agent",
+      "label": "Analysis Coordinator",
+      "nodeCategory": "agent",
+      "agent_id": "6971045dd6d0dcaec11187d7",
+      "agent_type": "manager",
+      "provider": "OpenAI",
+      "model": "gpt-4.1",
+      "position": { "x": 100, "y": 150 }
+    },
+    {
+      "id": "data_validation_agent",
+      "type": "Agent",
+      "label": "Data Validation Agent",
+      "nodeCategory": "agent",
+      "agent_id": "697103d01d92f5e2dd22ae59",
+      "agent_type": "sub-agent",
+      "provider": "OpenAI",
+      "model": "gpt-4.1",
+      "position": { "x": 50, "y": 300 }
+    },
+    {
+      "id": "som_sov_calculator_agent",
+      "type": "Agent",
+      "label": "SOM/SOV Calculator Agent",
+      "nodeCategory": "agent",
+      "agent_id": "697103e71d92f5e2dd22ae5f",
+      "agent_type": "sub-agent",
+      "provider": "OpenAI",
+      "model": "gpt-4.1",
+      "position": { "x": 200, "y": 300 }
+    },
+    {
+      "id": "competitive_intelligence_agent",
+      "type": "Agent",
+      "label": "Competitive Intelligence Agent",
+      "nodeCategory": "agent",
+      "agent_id": "697104041d92f5e2dd22ae71",
+      "agent_type": "sub-agent",
+      "provider": "Perplexity",
+      "model": "sonar-pro",
+      "position": { "x": 350, "y": 300 }
+    },
+    {
+      "id": "strategic_advisor_agent",
+      "type": "Agent",
+      "label": "Strategic Advisor Agent",
+      "nodeCategory": "agent",
+      "agent_id": "697104281d92f5e2dd22ae7c",
+      "agent_type": "sub-agent",
+      "provider": "OpenAI",
+      "model": "gpt-4.1",
+      "position": { "x": 500, "y": 300 }
+    },
+    {
+      "id": "output_node",
+      "type": "Output",
+      "label": "Analysis Report",
+      "nodeCategory": "end",
+      "position": { "x": 275, "y": 450 }
+    }
+  ],
+  "edges": [
+    {
+      "source": "input_node",
+      "target": "analysis_coordinator",
+      "type": "default"
+    },
+    {
+      "source": "analysis_coordinator",
+      "target": "data_validation_agent",
+      "type": "delegation"
+    },
+    {
+      "source": "analysis_coordinator",
+      "target": "som_sov_calculator_agent",
+      "type": "delegation"
+    },
+    {
+      "source": "analysis_coordinator",
+      "target": "competitive_intelligence_agent",
+      "type": "delegation"
+    },
+    {
+      "source": "analysis_coordinator",
+      "target": "strategic_advisor_agent",
+      "type": "delegation"
+    },
+    {
+      "source": "data_validation_agent",
+      "target": "output_node",
+      "type": "result"
+    },
+    {
+      "source": "som_sov_calculator_agent",
+      "target": "output_node",
+      "type": "result"
+    },
+    {
+      "source": "competitive_intelligence_agent",
+      "target": "output_node",
+      "type": "result"
+    },
+    {
+      "source": "strategic_advisor_agent",
+      "target": "output_node",
+      "type": "result"
+    }
+  ],
+  "agents": {
+    "manager": {
+      "agent_id": "6971045dd6d0dcaec11187d7",
+      "name": "Analysis Coordinator",
+      "description": "Orchestrates the complete SOM/SOV analysis workflow",
+      "role": "Analysis Workflow Coordinator",
+      "provider": "OpenAI",
+      "model": "gpt-4.1",
+      "temperature": 0.3,
+      "top_p": 1
+    },
+    "sub_agents": [
+      {
+        "agent_id": "697103d01d92f5e2dd22ae59",
+        "name": "Data Validation Agent",
+        "description": "Validates uploaded data for completeness, format correctness, and anomaly detection",
+        "role": "Data Quality Specialist",
+        "provider": "OpenAI",
+        "model": "gpt-4.1",
+        "temperature": 0.2,
+        "top_p": 1
+      },
+      {
+        "agent_id": "697103e71d92f5e2dd22ae5f",
+        "name": "SOM/SOV Calculator Agent",
+        "description": "Computes Share of Market and Share of Voice metrics, calculates trends, and generates comparative benchmarks",
+        "role": "Market Metrics Analyst",
+        "provider": "OpenAI",
+        "model": "gpt-4.1",
+        "temperature": 0.3,
+        "top_p": 1
+      },
+      {
+        "agent_id": "697104041d92f5e2dd22ae71",
+        "name": "Competitive Intelligence Agent",
+        "description": "Researches current chocolate snacking market trends, competitor activities, and industry news",
+        "role": "Market Research Analyst",
+        "provider": "Perplexity",
+        "model": "sonar-pro",
+        "temperature": 0.3,
+        "top_p": 1
+      },
+      {
+        "agent_id": "697104281d92f5e2dd22ae7c",
+        "name": "Strategic Advisor Agent",
+        "description": "Generates actionable strategic recommendations based on SOM/SOV analysis and competitive context",
+        "role": "Strategic Business Advisor",
+        "provider": "OpenAI",
+        "model": "gpt-4.1",
+        "temperature": 0.5,
+        "top_p": 0.95
+      }
+    ]
+  }
+}

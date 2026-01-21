@@ -1,0 +1,62 @@
+{
+  "agent_name": "Data Validation Agent",
+  "agent_id": "697103d01d92f5e2dd22ae59",
+  "test_message": "Validate this data: Brand A - Sales: $7.5M, Media Spend: $2M. Brand B - Sales: $6M, Media Spend: $1.5M. Brand C - Sales: $5M, Media Spend: $1.8M. Total Market: $50M sales, $15M media spend.",
+  "expected_purpose": "parser",
+  "timestamp": "2026-01-21T16:54:41.386948",
+  "is_valid_json": true,
+  "validation_errors": [],
+  "actual_response": {
+    "status": "success",
+    "result": {
+      "validation_passed": false,
+      "quality_score": 68,
+      "completeness_check": {
+        "missing_fields": [
+          "advertising_spend (distinct from media spend if applicable)",
+          "other required market metrics (e.g., share, growth rate)"
+        ],
+        "completeness_percentage": 75
+      },
+      "format_check": {
+        "format_errors": [
+          {
+            "field": "Sales",
+            "issue": "Currency format ($7.5M) is non-numeric. Should provide as number or in consistent format."
+          },
+          {
+            "field": "Media Spend",
+            "issue": "Currency format ($2M, $1.5M, etc.) is non-numeric. Use plain numbers or specify standard unit."
+          }
+        ],
+        "format_valid": false
+      },
+      "anomaly_detection": {
+        "anomalies_found": [
+          {
+            "field": "Total Market Sales",
+            "value": "$50M",
+            "reason": "Sum of brand sales ($18.5M) is much less than total market sales ($50M). Brands may be a subset, but this should be clarified."
+          },
+          {
+            "field": "Total Market Media Spend",
+            "value": "$15M",
+            "reason": "Sum of brand media spend ($5.3M) is significantly below total market value ($15M). Possible missing brands."
+          }
+        ],
+        "anomaly_count": 2
+      },
+      "recommendations": [
+        "Provide numeric values for all monetary data fields, avoiding mixed text/numeric formats (e.g., use 7500000 instead of $7.5M).",
+        "Clarify if sales/media spend are for top brands only and explain disparity with total market values.",
+        "Add missing key market metrics such as market share or growth rate per brand if available.",
+        "Specify if 'media spend' equals 'advertising spend' or provide both separately if distinct."
+      ]
+    },
+    "metadata": {
+      "agent_name": "Data Validation Agent",
+      "timestamp": "2024-07-07T11:24:17Z"
+    }
+  },
+  "raw_response": "{\n  \"status\": \"success\",\n  \"result\": {\n    \"validation_passed\": false,\n    \"quality_score\": 68,\n    \"completeness_check\": {\n      \"missing_fields\": [\"advertising_spend (distinct from media spend if applicable)\", \"other required market metrics (e.g., share, growth rate)\"],\n      \"completeness_percentage\": 75\n    },\n    \"format_check\": {\n      \"format_errors\": [\n        {\"field\": \"Sales\", \"issue\": \"Currency format ($7.5M) is non-numeric. Should provide as number or in consistent format.\"},\n        {\"field\": \"Media Spend\", \"issue\": \"Currency format ($2M, $1.5M, etc.) is non-numeric. Use plain numbers or specify standard unit.\"}\n      ],\n      \"format_valid\": false\n    },\n    \"anomaly_detection\": {\n      \"anomalies_found\": [\n        {\"field\": \"Total Market Sales\", \"value\": \"$50M\", \"reason\": \"Sum of brand sales ($18.5M) is much less than total market sales ($50M). Brands may be a subset, but this should be clarified.\"},\n        {\"field\": \"Total Market Media Spend\", \"value\": \"$15M\", \"reason\": \"Sum of brand media spend ($5.3M) is significantly below total market value ($15M). Possible missing brands.\"}\n      ],\n      \"anomaly_count\": 2\n    },\n    \"recommendations\": [\n      \"Provide numeric values for all monetary data fields, avoiding mixed text/numeric formats (e.g., use 7500000 instead of $7.5M).\",\n      \"Clarify if sales/media spend are for top brands only and explain disparity with total market values.\",\n      \"Add missing key market metrics such as market share or growth rate per brand if available.\",\n      \"Specify if 'media spend' equals 'advertising spend' or provide both separately if distinct.\"\n    ]\n  },\n  \"metadata\": {\n    \"agent_name\": \"Data Validation Agent\",\n    \"timestamp\": \"2024-07-07T11:24:17Z\"\n  }\n}"
+}

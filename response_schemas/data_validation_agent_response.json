@@ -1,0 +1,153 @@
+{
+  "agent_name": "Data Validation Agent",
+  "agent_id": "697103d01d92f5e2dd22ae59",
+  "agent_purpose": "parser",
+  "description": "Validates uploaded data for completeness, format correctness, and anomaly detection",
+  "response_schema": {
+    "status": "string",
+    "result": {
+      "validation_passed": "boolean",
+      "quality_score": "number",
+      "completeness_check": {
+        "missing_fields": [
+          "string"
+        ],
+        "completeness_percentage": "number"
+      },
+      "format_check": {
+        "format_errors": [
+          {
+            "field": "string",
+            "issue": "string"
+          }
+        ],
+        "format_valid": "boolean"
+      },
+      "anomaly_detection": {
+        "anomalies_found": [
+          {
+            "field": "string",
+            "value": "string",
+            "reason": "string"
+          }
+        ],
+        "anomaly_count": "number"
+      },
+      "recommendations": [
+        "string"
+      ]
+    },
+    "metadata": {
+      "agent_name": "string",
+      "timestamp": "string"
+    }
+  },
+  "example_response": {
+    "status": "success",
+    "result": {
+      "validation_passed": false,
+      "quality_score": 68,
+      "completeness_check": {
+        "missing_fields": [
+          "advertising_spend (distinct from media spend if applicable)",
+          "other required market metrics (e.g., share, growth rate)"
+        ],
+        "completeness_percentage": 75
+      },
+      "format_check": {
+        "format_errors": [
+          {
+            "field": "Sales",
+            "issue": "Currency format ($7.5M) is non-numeric. Should provide as number or in consistent format."
+          },
+          {
+            "field": "Media Spend",
+            "issue": "Currency format ($2M, $1.5M, etc.) is non-numeric. Use plain numbers or specify standard unit."
+          }
+        ],
+        "format_valid": false
+      },
+      "anomaly_detection": {
+        "anomalies_found": [
+          {
+            "field": "Total Market Sales",
+            "value": "$50M",
+            "reason": "Sum of brand sales ($18.5M) is much less than total market sales ($50M). Brands may be a subset, but this should be clarified."
+          },
+          {
+            "field": "Total Market Media Spend",
+            "value": "$15M",
+            "reason": "Sum of brand media spend ($5.3M) is significantly below total market value ($15M). Possible missing brands."
+          }
+        ],
+        "anomaly_count": 2
+      },
+      "recommendations": [
+        "Provide numeric values for all monetary data fields, avoiding mixed text/numeric formats (e.g., use 7500000 instead of $7.5M).",
+        "Clarify if sales/media spend are for top brands only and explain disparity with total market values.",
+        "Add missing key market metrics such as market share or growth rate per brand if available.",
+        "Specify if 'media spend' equals 'advertising spend' or provide both separately if distinct."
+      ]
+    },
+    "metadata": {
+      "agent_name": "Data Validation Agent",
+      "timestamp": "2024-07-07T11:24:17Z"
+    }
+  },
+  "is_actual_tested": true,
+  "test_timestamp": "2026-01-21T16:54:41.389021",
+  "test_message_used": "Parse this sample text for testing",
+  "actual_test_response": {
+    "status": "success",
+    "result": {
+      "validation_passed": false,
+      "quality_score": 68,
+      "completeness_check": {
+        "missing_fields": [
+          "advertising_spend (distinct from media spend if applicable)",
+          "other required market metrics (e.g., share, growth rate)"
+        ],
+        "completeness_percentage": 75
+      },
+      "format_check": {
+        "format_errors": [
+          {
+            "field": "Sales",
+            "issue": "Currency format ($7.5M) is non-numeric. Should provide as number or in consistent format."
+          },
+          {
+            "field": "Media Spend",
+            "issue": "Currency format ($2M, $1.5M, etc.) is non-numeric. Use plain numbers or specify standard unit."
+          }
+        ],
+        "format_valid": false
+      },
+      "anomaly_detection": {
+        "anomalies_found": [
+          {
+            "field": "Total Market Sales",
+            "value": "$50M",
+            "reason": "Sum of brand sales ($18.5M) is much less than total market sales ($50M). Brands may be a subset, but this should be clarified."
+          },
+          {
+            "field": "Total Market Media Spend",
+            "value": "$15M",
+            "reason": "Sum of brand media spend ($5.3M) is significantly below total market value ($15M). Possible missing brands."
+          }
+        ],
+        "anomaly_count": 2
+      },
+      "recommendations": [
+        "Provide numeric values for all monetary data fields, avoiding mixed text/numeric formats (e.g., use 7500000 instead of $7.5M).",
+        "Clarify if sales/media spend are for top brands only and explain disparity with total market values.",
+        "Add missing key market metrics such as market share or growth rate per brand if available.",
+        "Specify if 'media spend' equals 'advertising spend' or provide both separately if distinct."
+      ]
+    },
+    "metadata": {
+      "agent_name": "Data Validation Agent",
+      "timestamp": "2024-07-07T11:24:17Z"
+    }
+  },
+  "test_passed": true
+}

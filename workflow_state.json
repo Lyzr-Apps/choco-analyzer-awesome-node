@@ -1,0 +1,71 @@
+{
+  "workflow_name": "Chocolate Snacking SOM/SOV Analyzer",
+  "created_at": "2026-01-21T00:00:00Z",
+  "status": "complete",
+  "agents": {
+    "manager": {
+      "agent_id": "6971045dd6d0dcaec11187d7",
+      "name": "Analysis Coordinator",
+      "type": "manager",
+      "provider": "OpenAI",
+      "model": "gpt-4.1",
+      "temperature": 0.3,
+      "top_p": 1,
+      "managed_agents": [
+        "697103d01d92f5e2dd22ae59",
+        "697103e71d92f5e2dd22ae5f",
+        "697104041d92f5e2dd22ae71",
+        "697104281d92f5e2dd22ae7c"
+      ]
+    },
+    "sub_agents": [
+      {
+        "agent_id": "697103d01d92f5e2dd22ae59",
+        "name": "Data Validation Agent",
+        "type": "sub-agent",
+        "provider": "OpenAI",
+        "model": "gpt-4.1",
+        "temperature": 0.2,
+        "top_p": 1,
+        "purpose": "Validates uploaded data for completeness, format correctness, and anomaly detection"
+      },
+      {
+        "agent_id": "697103e71d92f5e2dd22ae5f",
+        "name": "SOM/SOV Calculator Agent",
+        "type": "sub-agent",
+        "provider": "OpenAI",
+        "model": "gpt-4.1",
+        "temperature": 0.3,
+        "top_p": 1,
+        "purpose": "Computes Share of Market and Share of Voice metrics with trends and benchmarks"
+      },
+      {
+        "agent_id": "697104041d92f5e2dd22ae71",
+        "name": "Competitive Intelligence Agent",
+        "type": "sub-agent",
+        "provider": "Perplexity",
+        "model": "sonar-pro",
+        "temperature": 0.3,
+        "top_p": 1,
+        "purpose": "Researches chocolate snacking market trends and competitor activities"
+      },
+      {
+        "agent_id": "697104281d92f5e2dd22ae7c",
+        "name": "Strategic Advisor Agent",
+        "type": "sub-agent",
+        "provider": "OpenAI",
+        "model": "gpt-4.1",
+        "temperature": 0.5,
+        "top_p": 0.95,
+        "purpose": "Generates actionable strategic recommendations based on analysis results"
+      }
+    ]
+  },
+  "response_schemas": [
+    "response_schemas/data_validation_agent_response.json",
+    "response_schemas/som_sov_calculator_agent_response.json",
+    "response_schemas/competitive_intelligence_agent_response.json",
+    "response_schemas/strategic_advisor_agent_response.json",
+    "response_schemas/analysis_coordinator_response.json"
+  ]
+}

@@ -1,0 +1,128 @@
+{
+  "agent_name": "SOM/SOV Calculator Agent",
+  "agent_id": "697103e71d92f5e2dd22ae5f",
+  "agent_purpose": "calculator",
+  "description": "Computes Share of Market and Share of Voice metrics, calculates trends, and generates comparative benchmarks",
+  "response_schema": {
+    "status": "string",
+    "result": {
+      "brand_metrics": [
+        {
+          "brand_name": "string",
+          "som_percentage": "number",
+          "sov_percentage": "number",
+          "som_sov_ratio": "number",
+          "market_rank": "number",
+          "sales_value": "number",
+          "ad_spend": "number"
+        }
+      ],
+      "market_totals": {
+        "total_sales": "number",
+        "total_ad_spend": "number",
+        "total_brands": "number"
+      },
+      "trends": {
+        "mom_change": "number",
+        "yoy_change": "null",
+        "trend_direction": "string"
+      },
+      "benchmarks": {
+        "market_leader": "string",
+        "voice_leader": "string",
+        "most_efficient": "string"
+      },
+      "insights": [
+        "string"
+      ]
+    },
+    "metadata": {
+      "agent_name": "string",
+      "timestamp": "string"
+    }
+  },
+  "example_response": {
+    "status": "success",
+    "result": {
+      "brand_metrics": [
+        {
+          "brand_name": "Brand A",
+          "som_percentage": 15,
+          "sov_percentage": 13.33,
+          "som_sov_ratio": 1.13,
+          "market_rank": 1,
+          "sales_value": 7500000,
+          "ad_spend": 2000000
+        }
+      ],
+      "market_totals": {
+        "total_sales": 50000000,
+        "total_ad_spend": 15000000,
+        "total_brands": 1
+      },
+      "trends": {
+        "mom_change": 7.14,
+        "yoy_change": null,
+        "trend_direction": "up"
+      },
+      "benchmarks": {
+        "market_leader": "Brand A",
+        "voice_leader": "Brand A",
+        "most_efficient": "Brand A"
+      },
+      "insights": [
+        "Brand A achieved a 15% Share of Market, leading its segment based on current data.",
+        "SOM/SOV ratio greater than 1 indicates Brand A is converting media investment into sales efficiently.",
+        "Both sales and media spend grew month-over-month, with a higher increase in sales (+7.14%) versus ad spend (+11.11%)."
+      ]
+    },
+    "metadata": {
+      "agent_name": "SOM/SOV Calculator Agent",
+      "timestamp": "2024-06-15T12:00:00Z"
+    }
+  },
+  "is_actual_tested": true,
+  "test_timestamp": "2026-01-21T16:54:45.509648",
+  "test_message_used": "Calculate a sample value for testing",
+  "actual_test_response": {
+    "status": "success",
+    "result": {
+      "brand_metrics": [
+        {
+          "brand_name": "Brand A",
+          "som_percentage": 15,
+          "sov_percentage": 13.33,
+          "som_sov_ratio": 1.13,
+          "market_rank": 1,
+          "sales_value": 7500000,
+          "ad_spend": 2000000
+        }
+      ],
+      "market_totals": {
+        "total_sales": 50000000,
+        "total_ad_spend": 15000000,
+        "total_brands": 1
+      },
+      "trends": {
+        "mom_change": 7.14,
+        "yoy_change": null,
+        "trend_direction": "up"
+      },
+      "benchmarks": {
+        "market_leader": "Brand A",
+        "voice_leader": "Brand A",
+        "most_efficient": "Brand A"
+      },
+      "insights": [
+        "Brand A achieved a 15% Share of Market, leading its segment based on current data.",
+        "SOM/SOV ratio greater than 1 indicates Brand A is converting media investment into sales efficiently.",
+        "Both sales and media spend grew month-over-month, with a higher increase in sales (+7.14%) versus ad spend (+11.11%)."
+      ]
+    },
+    "metadata": {
+      "agent_name": "SOM/SOV Calculator Agent",
+      "timestamp": "2024-06-15T12:00:00Z"
+    }
+  },
+  "test_passed": true
+}

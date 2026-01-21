@@ -1,0 +1,168 @@
+{
+  "agent_name": "Analysis Coordinator",
+  "agent_id": "6971045dd6d0dcaec11187d7",
+  "agent_purpose": "manager",
+  "description": "Orchestrates complete SOM/SOV analysis workflow and aggregates results from all sub-agents",
+  "response_schema": {
+    "status": "string",
+    "result": {
+      "validation_summary": {
+        "data_quality_status": "string",
+        "issues_found": [
+          "any"
+        ],
+        "total_brands_analyzed": "number"
+      },
+      "market_metrics": {
+        "total_market_share": "number",
+        "total_voice_share": "number",
+        "top_brand_som": "number",
+        "top_brand_sov": "number",
+        "efficiency_leader": "string"
+      },
+      "competitive_insights": {
+        "market_trends": [
+          "string"
+        ],
+        "competitor_activities": [
+          "string"
+        ],
+        "industry_developments": [
+          "string"
+        ]
+      },
+      "strategic_recommendations": {
+        "priority_actions": [
+          "string"
+        ],
+        "risk_areas": [
+          "string"
+        ],
+        "opportunity_areas": [
+          "string"
+        ]
+      }
+    },
+    "metadata": {
+      "agent_name": "string",
+      "timestamp": "string",
+      "sub_agents_invoked": [
+        "string"
+      ]
+    }
+  },
+  "example_response": {
+    "status": "success",
+    "result": {
+      "validation_summary": {
+        "data_quality_status": "Valid",
+        "issues_found": [],
+        "total_brands_analyzed": 3
+      },
+      "market_metrics": {
+        "total_market_share": 37,
+        "total_voice_share": 34.67,
+        "top_brand_som": 15,
+        "top_brand_sov": 13.33,
+        "efficiency_leader": "Brand B"
+      },
+      "competitive_insights": {
+        "market_trends": [
+          "Major brands are allocating media budgets proportionally close to their market shares, showing a balanced competitive environment.",
+          "Total brand market share (37%) is below 50%, indicating fragmented competition or strong market presence from additional brands."
+        ],
+        "competitor_activities": [
+          "Brand C, with a mid-range market share, is spending relatively more in media versus its SOM, suggesting an aggressive push for growth.",
+          "Brand B demonstrates high efficiency by achieving similar SOM and SOV with lower spend per share point."
+        ],
+        "industry_developments": [
+          "Media investment strategies are trending toward optimization and pay-for-impact efficiency.",
+          "Media spend levels remain significant, indicating sustained competition for consumer mindshare in March 2024."
+        ]
+      },
+      "strategic_recommendations": {
+        "priority_actions": [
+          "Reassess Brand C's media budget for return on investment, as media spend exceeds both SOM and SOV peers.",
+          "Brand B should consider modestly increasing media investment to further capitalize on its strong efficiency."
+        ],
+        "risk_areas": [
+          "Overinvestment risk for Brand C if market share does not increase proportionally to media spend.",
+          "Potential for under-representation if any brand's SOV drops too far below SOM."
+        ],
+        "opportunity_areas": [
+          "Brands can increase efficiency by aligning SOV and SOM more closely to drive share growth.",
+          "Potential for new entrants or challenger brands to disrupt the current share balance with targeted spend strategies."
+        ]
+      }
+    },
+    "metadata": {
+      "agent_name": "Analysis Coordinator",
+      "timestamp": "2024-06-13T20:06:24Z",
+      "sub_agents_invoked": [
+        "Data Validation Agent",
+        "SOM/SOV Calculator Agent",
+        "Competitive Intelligence Agent",
+        "Strategic Advisor Agent"
+      ]
+    }
+  },
+  "is_actual_tested": true,
+  "test_timestamp": "2026-01-21T16:58:21.292356",
+  "test_message_used": "Process this request and coordinate sub-agents",
+  "actual_test_response": {
+    "status": "success",
+    "result": {
+      "validation_summary": {
+        "data_quality_status": "Valid",
+        "issues_found": [],
+        "total_brands_analyzed": 3
+      },
+      "market_metrics": {
+        "total_market_share": 37,
+        "total_voice_share": 34.67,
+        "top_brand_som": 15,
+        "top_brand_sov": 13.33,
+        "efficiency_leader": "Brand B"
+      },
+      "competitive_insights": {
+        "market_trends": [
+          "Major brands are allocating media budgets proportionally close to their market shares, showing a balanced competitive environment.",
+          "Total brand market share (37%) is below 50%, indicating fragmented competition or strong market presence from additional brands."
+        ],
+        "competitor_activities": [
+          "Brand C, with a mid-range market share, is spending relatively more in media versus its SOM, suggesting an aggressive push for growth.",
+          "Brand B demonstrates high efficiency by achieving similar SOM and SOV with lower spend per share point."
+        ],
+        "industry_developments": [
+          "Media investment strategies are trending toward optimization and pay-for-impact efficiency.",
+          "Media spend levels remain significant, indicating sustained competition for consumer mindshare in March 2024."
+        ]
+      },
+      "strategic_recommendations": {
+        "priority_actions": [
+          "Reassess Brand C's media budget for return on investment, as media spend exceeds both SOM and SOV peers.",
+          "Brand B should consider modestly increasing media investment to further capitalize on its strong efficiency."
+        ],
+        "risk_areas": [
+          "Overinvestment risk for Brand C if market share does not increase proportionally to media spend.",
+          "Potential for under-representation if any brand's SOV drops too far below SOM."
+        ],
+        "opportunity_areas": [
+          "Brands can increase efficiency by aligning SOV and SOM more closely to drive share growth.",
+          "Potential for new entrants or challenger brands to disrupt the current share balance with targeted spend strategies."
+        ]
+      }
+    },
+    "metadata": {
+      "agent_name": "Analysis Coordinator",
+      "timestamp": "2024-06-13T20:06:24Z",
+      "sub_agents_invoked": [
+        "Data Validation Agent",
+        "SOM/SOV Calculator Agent",
+        "Competitive Intelligence Agent",
+        "Strategic Advisor Agent"
+      ]
+    }
+  },
+  "test_passed": true
+}

@@ -1,0 +1,247 @@
+{
+  "agent_name": "Strategic Advisor Agent",
+  "agent_id": "697104281d92f5e2dd22ae7c",
+  "agent_purpose": "recommendation",
+  "description": "Generates actionable strategic recommendations based on SOM/SOV analysis and competitive context",
+  "response_schema": {
+    "status": "string",
+    "result": {
+      "executive_summary": "string",
+      "swot_analysis": {
+        "strengths": [
+          "string"
+        ],
+        "weaknesses": [
+          "string"
+        ],
+        "opportunities": [
+          "string"
+        ],
+        "threats": [
+          "string"
+        ]
+      },
+      "strategic_recommendations": [
+        {
+          "priority": "string",
+          "recommendation": "string",
+          "rationale": "string",
+          "expected_impact": "string",
+          "timeframe": "string",
+          "action_steps": [
+            "string"
+          ]
+        }
+      ],
+      "risk_assessment": [
+        {
+          "risk": "string",
+          "likelihood": "string",
+          "impact": "string",
+          "mitigation": "string"
+        }
+      ],
+      "success_metrics": [
+        "string"
+      ]
+    },
+    "metadata": {
+      "agent_name": "string",
+      "timestamp": "string"
+    }
+  },
+  "example_response": {
+    "status": "success",
+    "result": {
+      "executive_summary": "Your brand is outpacing market growth and holds a higher share of market (SOM) than share of voice (SOV), suggesting growth has outperformed media spend. With a main competitor reducing media investment and overall market growth steady, targeted investment in media and brand messaging can accelerate share gains.",
+      "swot_analysis": {
+        "strengths": [
+          "Brand growth (7%) exceeds market growth (4%)",
+          "Strong market share position (15% SOM)",
+          "Resilient to competitor's reduced media activity"
+        ],
+        "weaknesses": [
+          "Underinvestment in media (SOV/SOM ratio below 1)",
+          "Potential brand awareness gap versus share of market",
+          "Risk of being outshouted if competitor reinvests aggressively"
+        ],
+        "opportunities": [
+          "Capitalize on competitor's reduced spend to gain SOV",
+          "Increase media investment to match or exceed SOM, fueling further growth",
+          "Leverage favorable growth momentum to drive brand loyalty and acquisition"
+        ],
+        "threats": [
+          "Competitor could rebound with increased media spend",
+          "Market growth may attract new entrants, increasing competitive intensity",
+          "Sustained low SOV could eventually slow share gains"
+        ]
+      },
+      "strategic_recommendations": [
+        {
+          "priority": "high",
+          "recommendation": "Increase media investment to at least match SOM (SOV/SOM \u2265 1)",
+          "rationale": "A higher SOV typically drives future SOM growth, especially when a main competitor has decreased spend, allowing you to capture incremental share more efficiently.",
+          "expected_impact": "Accelerated market share gains and improved top-of-mind brand awareness.",
+          "timeframe": "short-term",
+          "action_steps": [
+            "Conduct gap analysis to determine optimal media spend required to reach 15% SOV+",
+            "Allocate additional budget for key high-impact channels",
+            "Monitor SOV monthly and adjust spend as needed"
+          ]
+        },
+        {
+          "priority": "medium",
+          "recommendation": "Enhance brand messaging to reinforce differentiation during competitor's quiet period",
+          "rationale": "With reduced competitor messaging clutter, distinct brand stories can achieve higher cut-through and engagement.",
+          "expected_impact": "Deeper brand engagement and higher consideration versus competitors.",
+          "timeframe": "short-term",
+          "action_steps": [
+            "Refresh creative assets to emphasize differentiation",
+            "Run targeted campaigns highlighting new or unique product features",
+            "Leverage digital platforms for efficient reach and targeted messaging"
+          ]
+        },
+        {
+          "priority": "medium",
+          "recommendation": "Leverage data-driven marketing to identify high-growth customer segments",
+          "rationale": "Focusing on the most responsive segments will increase marketing ROI and lock in sustainable growth.",
+          "expected_impact": "Improved conversion rates and enhanced customer lifetime value.",
+          "timeframe": "medium-term",
+          "action_steps": [
+            "Segment customer base using recent performance data",
+            "Develop tailored offers and communications for top-growth segments",
+            "Measure uplift and iterate approach quarterly"
+          ]
+        }
+      ],
+      "risk_assessment": [
+        {
+          "risk": "Competitor rebounds with larger media investment",
+          "likelihood": "medium",
+          "impact": "high",
+          "mitigation": "Secure flexible budget allocation for rapid response and maintain ongoing SOV tracking."
+        },
+        {
+          "risk": "Increased spend does not translate to SOM gains",
+          "likelihood": "low",
+          "impact": "medium",
+          "mitigation": "Monitor campaign performance closely and pivot media mix as needed, focusing on most responsive channels."
+        },
+        {
+          "risk": "Market growth slows unexpectedly",
+          "likelihood": "low",
+          "impact": "medium",
+          "mitigation": "Scenario plan for budget reallocation and strengthen retention efforts in core segments."
+        }
+      ],
+      "success_metrics": [
+        "Increase SOV to at least 15% within three months",
+        "Achieve SOM growth higher than market rate each quarter",
+        "Brand awareness and consideration scores from brand tracking surveys"
+      ]
+    },
+    "metadata": {
+      "agent_name": "Strategic Advisor Agent",
+      "timestamp": "2024-06-04T12:00:00Z"
+    }
+  },
+  "is_actual_tested": true,
+  "test_timestamp": "2026-01-21T16:55:32.121849",
+  "test_message_used": "Provide sample recommendations for testing",
+  "actual_test_response": {
+    "status": "success",
+    "result": {
+      "executive_summary": "Your brand is outpacing market growth and holds a higher share of market (SOM) than share of voice (SOV), suggesting growth has outperformed media spend. With a main competitor reducing media investment and overall market growth steady, targeted investment in media and brand messaging can accelerate share gains.",
+      "swot_analysis": {
+        "strengths": [
+          "Brand growth (7%) exceeds market growth (4%)",
+          "Strong market share position (15% SOM)",
+          "Resilient to competitor's reduced media activity"
+        ],
+        "weaknesses": [
+          "Underinvestment in media (SOV/SOM ratio below 1)",
+          "Potential brand awareness gap versus share of market",
+          "Risk of being outshouted if competitor reinvests aggressively"
+        ],
+        "opportunities": [
+          "Capitalize on competitor's reduced spend to gain SOV",
+          "Increase media investment to match or exceed SOM, fueling further growth",
+          "Leverage favorable growth momentum to drive brand loyalty and acquisition"
+        ],
+        "threats": [
+          "Competitor could rebound with increased media spend",
+          "Market growth may attract new entrants, increasing competitive intensity",
+          "Sustained low SOV could eventually slow share gains"
+        ]
+      },
+      "strategic_recommendations": [
+        {
+          "priority": "high",
+          "recommendation": "Increase media investment to at least match SOM (SOV/SOM \u2265 1)",
+          "rationale": "A higher SOV typically drives future SOM growth, especially when a main competitor has decreased spend, allowing you to capture incremental share more efficiently.",
+          "expected_impact": "Accelerated market share gains and improved top-of-mind brand awareness.",
+          "timeframe": "short-term",
+          "action_steps": [
+            "Conduct gap analysis to determine optimal media spend required to reach 15% SOV+",
+            "Allocate additional budget for key high-impact channels",
+            "Monitor SOV monthly and adjust spend as needed"
+          ]
+        },
+        {
+          "priority": "medium",
+          "recommendation": "Enhance brand messaging to reinforce differentiation during competitor's quiet period",
+          "rationale": "With reduced competitor messaging clutter, distinct brand stories can achieve higher cut-through and engagement.",
+          "expected_impact": "Deeper brand engagement and higher consideration versus competitors.",
+          "timeframe": "short-term",
+          "action_steps": [
+            "Refresh creative assets to emphasize differentiation",
+            "Run targeted campaigns highlighting new or unique product features",
+            "Leverage digital platforms for efficient reach and targeted messaging"
+          ]
+        },
+        {
+          "priority": "medium",
+          "recommendation": "Leverage data-driven marketing to identify high-growth customer segments",
+          "rationale": "Focusing on the most responsive segments will increase marketing ROI and lock in sustainable growth.",
+          "expected_impact": "Improved conversion rates and enhanced customer lifetime value.",
+          "timeframe": "medium-term",
+          "action_steps": [
+            "Segment customer base using recent performance data",
+            "Develop tailored offers and communications for top-growth segments",
+            "Measure uplift and iterate approach quarterly"
+          ]
+        }
+      ],
+      "risk_assessment": [
+        {
+          "risk": "Competitor rebounds with larger media investment",
+          "likelihood": "medium",
+          "impact": "high",
+          "mitigation": "Secure flexible budget allocation for rapid response and maintain ongoing SOV tracking."
+        },
+        {
+          "risk": "Increased spend does not translate to SOM gains",
+          "likelihood": "low",
+          "impact": "medium",
+          "mitigation": "Monitor campaign performance closely and pivot media mix as needed, focusing on most responsive channels."
+        },
+        {
+          "risk": "Market growth slows unexpectedly",
+          "likelihood": "low",
+          "impact": "medium",
+          "mitigation": "Scenario plan for budget reallocation and strengthen retention efforts in core segments."
+        }
+      ],
+      "success_metrics": [
+        "Increase SOV to at least 15% within three months",
+        "Achieve SOM growth higher than market rate each quarter",
+        "Brand awareness and consideration scores from brand tracking surveys"
+      ]
+    },
+    "metadata": {
+      "agent_name": "Strategic Advisor Agent",
+      "timestamp": "2024-06-04T12:00:00Z"
+    }
+  },
+  "test_passed": true
+}
